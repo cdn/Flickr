@@ -27,7 +27,7 @@ namespace IdnoPlugins\Flickr\Pages {
         /**
          * HTTP GET Action
          *
-         * @return Of_The_Jedi
+         * @return of The Jedi
          */
         function getContent()
         {
