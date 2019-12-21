@@ -81,7 +81,7 @@ namespace IdnoPlugins\Flickr {
                 }, array('image')
             );
 
-            \Idno\Core\Idno::site()->addEventHook(
+            \Idno\Core\Idno::site()->events()->addListener(
                 'user/auth/success', function (\Idno\Core\Event $event) {
                     if ($this->hasFlickr()) {
                         if (is_array(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
@@ -99,7 +99,7 @@ namespace IdnoPlugins\Flickr {
             );
 
             // Push "images" to Flickr
-            \Idno\Core\Idno::site()->addEventHook(
+            \Idno\Core\Idno::site()->events()->addListener(
                 'post/image/flickr', function (\Idno\Core\Event $event) {
                         $eventdata = $event->data();
                         $object = $eventdata['object'];
