@@ -2,35 +2,16 @@
 
     /**
      * Plugin administration
-     *
-     * PHP version 5.6
-     *
-     * @category Plug-in
-     * @package  Photo_POSSE
-     * @author   Known, Inc <hello@withknown.com>
-     * @license  https://github.com/idno/Known/blob/master/LICENSE Apache
-     * @link     https://github.com/Idno/Flickr
      */
 
 namespace IdnoPlugins\Flickr\Pages {
 
     /**
      * Default class to remove Flickr account credentials
-     *
-     * @category Class
-     * @package  Flickr
-     * @author   @cdn <cn@domain.tld>
-     * @license  https://github.com/idno/Flickr/blob/master/LICENCE Above
-     * @link     https://github.com/cdn
      */
     class Deauth extends \Idno\Common\Page
     {
 
-        /**
-         * HTTP GET Action
-         *
-         * @return of the Living Dead
-         */
         function getContent()
         {
             $this->gatekeeper(); // Logged-in users only
@@ -56,11 +37,6 @@ namespace IdnoPlugins\Flickr\Pages {
             $this->forward($_SERVER['HTTP_REFERER']);
         }
 
-        /**
-         * HTTP GET Action
-         *
-         * @return this function returns nothing
-         */
         function postContent()
         {
             $this->getContent();
