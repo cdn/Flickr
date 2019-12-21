@@ -1,17 +1,5 @@
 <?php
 
-    /**
-     * Flickr pages
-     *
-     * PHP version 5.6
-     *
-     * @category Plug-in
-     * @package  Photo_POSSE
-     * @author   Known, Inc <hello@withknown.com>
-     * @license  https://github.com/idno/Known/blob/master/LICENSE Apache
-     * @link     https://github.com/Idno/Flickr
-     */
-
 if ($flickr = \Idno\Core\Idno::site()->plugins()->get('Flickr')) {
     if (empty(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
         $login_url = \Idno\Core\Idno::site()->config()->getURL() . 'flickr/callback';
@@ -25,7 +13,7 @@ if ($flickr = \Idno\Core\Idno::site()->plugins()->get('Flickr')) {
     <a href="<?php echo $login_url?>" class="connect fl <?php
 
     if (!empty(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
-    echo 'connected';
+        echo 'connected';
     }
 
     ?>" target="_top">Flickr<?php
@@ -35,5 +23,5 @@ if (!empty(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
 }
 
 ?></a>
-    <label class="control-label">Share pictures to Flickr.</label>
+    <label class="control-label"><?php echo \Idno\Core\Idno::site()->language()->_('Share pictures to Flickr.'); ?></label>
 </div>

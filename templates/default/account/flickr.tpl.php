@@ -1,18 +1,4 @@
-<?php
-
-    /**
-     * Flickr pages
-     *
-     * PHP version 5.6
-     *
-     * @category Plug-in
-     * @package  Photo_POSSE
-     * @author   Known, Inc <hello@withknown.com>
-     * @license  https://github.com/idno/Known/blob/master/LICENSE Apache
-     * @link     https://github.com/Idno/Flickr
-     */
-
-?><div class="row">
+<div class="row">
 
     <div class="col-md-10 col-md-offset-1">
         <?php echo $this->draw('account/menu') ?>
@@ -27,8 +13,8 @@
             if (!empty(\Idno\Core\site()->config()->flickr['apiKey']) && !empty(\Idno\Core\site()->config()->flickr['secret'])) {
 
 
-            if (empty(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
-                ?>
+                if (empty(\Idno\Core\Idno::site()->session()->currentUser()->flickr)) {
+                    ?>
                     <div class="control-group">
                         <div class="controls-config">
                             <div class="row">
@@ -49,11 +35,11 @@
                     </div>
                         </div>
                     </div>
-                <?php
+                    <?php
 
-            } else if (!\Idno\Core\Idno::site()->config()->multipleSyndicationAccounts()) {
+                } else if (!\Idno\Core\Idno::site()->config()->multipleSyndicationAccounts()) {
 
-                ?>
+                    ?>
                     <div class="control-group">
                         <div class="controls-config">
                             <div class="row">
@@ -76,11 +62,11 @@
                         </div>
                     </div>
 
-                <?php
+                    <?php
 
-            } else {
+                } else {
 
-                ?>
+                    ?>
                     <div class="control-group">
                         <div class="controls-config">
                             <div class="row">
@@ -118,11 +104,11 @@
                                             <p>
                                                 <input type="hidden" name="remove" value="1"/>
                                                 <button type="submit" class="connect fl connected"><i class="fab fa-flickr"></i> <?php echo \Idno\Core\Idno::site()->language()->_('Disconnect Flickr'); ?></button>
-                                        <?php echo \Idno\Core\Idno::site()->actions()->signForm('/flickr/deauth/') ?>
+                                <?php echo \Idno\Core\Idno::site()->actions()->signForm('/flickr/deauth/') ?>
                                             </p>
                                         </form>
                                         </div>
-                                <?php
+                            <?php
 
                         }
 
@@ -135,9 +121,9 @@
                     </div>
                         </div>
                     </div>
-                <?php
+                    <?php
 
-            }
+                }
 
             } else {
 
@@ -146,7 +132,7 @@
                     ?>
                                   <div class="control-group">
                       <div class="controls-config">
-	                    <div class="row">
+                        <div class="row">
                                  <div class="col-md-7">
                     <p>
                         <?= \Idno\Core\Idno::site()->language()->_('Before you can begin connecting to Flickr, you need to set it up.'); ?>
@@ -154,7 +140,7 @@
                     <p>
                         <a href="<?= \Idno\Core\site()->config()->getDisplayURL() ?>admin/flickr/"><?= \Idno\Core\Idno::site()->language()->_('Click here to begin Flickr configuration.'); ?></a>
                     </p>
-                <?php
+                    <?php
 
                 } else {
 
@@ -167,12 +153,12 @@
                     </div>
                     </div>
 
-                <?php
+                    <?php
 
                 }
 
             }
 
-        ?>
+            ?>
     </div>
 </div>
